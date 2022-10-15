@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.list-container {
+    display: inline-flex;
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.btn {
+    border: 1px solid gray;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    color: white;
+    background-color: gray;
+    cursor: pointer;
+    transition: scale .1s;
+}
+
+.btn:hover {
+    background-color: rgb(52, 52, 52);
+    scale: 0.9;
+}
+
+.btn:focus {
+    outline: 3px solid rgb(89, 198, 89);
+}
