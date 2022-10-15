@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trello Clone</title><script defer="defer" src="main.js"></script><link href="main.css" rel="stylesheet"></head><body><template id="list"><style>.list {
+                --bgSecondary: rgb(50, 50, 50);
+                max-width: 300px;
+                min-height: 300px;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                border-radius: .3em;
+                overflow: hidden;
+                font-family: sans-serif;
+            }
+
+            .header {
+                background-color: var(--bgSecondary);
+                color: white;
+                text-align: center;
+                padding: 0.3em 1em;
+                text-transform: capitalize;
+            }
+
+            .task-list {
+                flex-grow: 1;
+                min-height: 200px;
+                background-color: gray;
+
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: .3rem;
+            }
+
+            .task-list.dragover {
+                outline: 2px dashed lightcoral;
+                outline-offset: -1rem;
+            }
+
+            .footer {
+                width: 100%;
+            }
+
+            .footer input {
+                background-color: var(--bgSecondary);
+                color: white;
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: 0.5em 1em;
+                font-size: 1.3rem;
+            }
+
+            .footer input::placeholder {
+                color: lightgray;
+                text-transform: capitalize;
+            }
+
+            .title {
+                background-color: transparent;
+                color: white;
+                font-size: 2rem;
+                text-transform: capitalize;
+                border: none;
+                outline: none;
+                text-align: center;
+                width: 100%;
+                cursor: pointer;
+                height: max-content;
+                resize: none;
+                overflow: hidden;
+
+            }</style><div class="list"><div class="header"><textarea rows="2" class="title" type="text" data-title maxlength="100"></textarea></div><div class="task-list" data-tasklist></div><div class="footer"><input placeholder="task name" data-input></div></div></template><template id="task"><style>.task {
+                color: black;
+                background-color: #fff;
+                padding: 0.5em;
+                text-transform: capitalize;
+                border-radius: .2em;
+                word-break: break-all;
+                cursor: pointer;
+            }
+
+            span {
+                pointer-events: none;
+            }</style><div class="task" draggable="true"><span data-info></span></div></template><div class="list-container" data-listcontainer></div><button class="btn" data-addlistbtn>Add new list</button></body></html>
